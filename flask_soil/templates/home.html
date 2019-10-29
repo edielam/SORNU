@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <!-- End Navigation -->
+
+<!-- Start Landing Page Section-->
+    <!-- styling and adding img is done in the css file-->
+        <div id="slides" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#slides" data-slide-to="0" class="active"></li>
+                <li data-target="#slides" data-slide-to="1"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="/static/images/img5.jpeg"/>
+                    <div class="carousel-caption">
+                        <h1 class="display-2" color;'white'>Welcome to SORNU.AI</h1>
+                        <h3>Precision Agriculture Recommender System</h3>
+                        <p><i>On a mission to increase crop yield one acre at a time</i></p>
+                        {% if current_user.is_authenticated %}
+                          <a class="btn btn-outline-light btn-lg" href="{{ url_for('ai') }}">Crop Recommender</a>
+                        {% else %}
+                          <a class="btn btn-outline-light btn-lg" href="{{ url_for('login') }}">Login</a>
+                          <a class="btn btn-outline-light btn-lg" href="{{ url_for('register') }}">Register</a>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="/static/images/img5.jpeg"/>
+                    <div class="carousel-caption">
+                        <h1 class="display-2">Welcome to SORNU.AI</h1>
+                        <h3>Precision Agriculture Recommender System</h3>
+                        <p><i>On a mission to increase crop yield one acre at a time</i></p>
+                        {% if current_user.is_authenticated %}
+                          <a class="btn btn-outline-light btn-lg" href="{{ url_for('ai') }}">Crop Recommender</a>
+                        {% else %}
+                          <a class="btn btn-outline-light btn-lg" href="{{ url_for('login') }}">Login</a>
+                          <a class="btn btn-outline-light btn-lg" href="{{ url_for('register') }}">Register</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- End Landing Page Section-->
+</div>
+<!-- End Home Section-->
+
+
+<!-- footer Section -->
+<div class="offset text-center">
+<footer class="container">
+  <p>&copy; <i>Levitech</i> 2019</p>
+</footer>
+</div>
+</body>
+</html>
+{% endblock content %}
+                <!--</div>
+                <!--<div class="carousel-item">
+                    <img src="/static/img/agric_two.jpg"/>
+                    <div class="carousel-caption">
+                        <h1 class="display-2">Welcome to Smart Farm</h1>
+                        <h3>Precision Agriculture Recommender System</h3>
+                        <p><i>Using AI to improve agriculture</i></p>
+
+                    </div>-->
+                <!--</div>-->

@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  </body>
+    <body src="/static/images/img7.jpg">
+          <!-- form card register -->
+          <div class="col-md-5">
+            <div class="card card-outline-secondary">
+                <div class="card-header">
+                    <h3 class="mb-0 text-center">Soil Analysis</h3>
+                </div>
+                <div class="card-body">
+                    <form class="form" action="{{ url_for('analysis') }}" method="POST">
+                        <div class="form-group">
+                            <label>PH Level (ranging from 1-7)</label>
+                            <input type="number" step="any" class="form-control" name="pH" placeholder="pH Level" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Nitrogen Content - N (mg)</label>
+                            <input type="number" step="any" class="form-control" name="N" placeholder="Nitrogen Content" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Phosphorus Content - P (mg)</label>
+                            <input type="number" step="any" class="form-control" name="P" placeholder="Phosphorus Content" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Calcium Content - K (mg)</label>
+                            <input type="number" step="any" class="form-control" name="K" placeholder="Calcium Content" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Organic Carbon - OC (mg)</label>
+                            <input type="number" step="any" class="form-control" name="OC" placeholder="Organic Carbon" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Particles (micrometer)</label>
+                            <input type="number" step="any" class="form-control" name="Particles" placeholder="Particles" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Water Holding Capacity (atm))</label>
+                            <input type="number" step="any" class="form-control" name="Water_holding_content" placeholder="Water Holding Capacity" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Soil Type (Clay: 1, Sandy: 2, Loamy: 3)</label>
+                            <input type="number" step="any" class="form-control" name="Soil_type" placeholder="Enter the corresponding number for each soil type" required="">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-outline-success btn-lg float-right" value="analyze">Analyze</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>        <!-- /form card register -->
+    </body>
+    <div class="offset text-center">
+      <footer class="container">
+        <p>&copy; <i>Levitech</i> 2019</p>
+      </footer>
+    </div>
+
+    {% endblock content %}
