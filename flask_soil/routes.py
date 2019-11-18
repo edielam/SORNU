@@ -54,7 +54,7 @@ model = pickle.load(pickle_in)
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 @app.route("/Blog")
 def blog():
@@ -99,7 +99,7 @@ def register():
         db.session.commit()
         flash('Your account has been created. You can now login', 'success')
         return redirect(url_for('login'))
-    return render_template('registration.html', title= 'Register', form=form)
+    return render_template('register.html', title= 'Register', form=form)
 
 @app.route('/analysis', methods=['GET', 'POST'])
 def analysis():
@@ -135,5 +135,5 @@ def logout():
 @app.route('/account')
 @login_required
 def account():
-    image_file= url_fro('static', filename='images/'+ current_user.image_file)
+    image_file= url_for('static', filename='images/'+ current_user.image_file)
     return render_template("account.html", title='Account')
